@@ -25,7 +25,7 @@ def vigenere():
 def railfence():
     return render_template('railfence.html')
 
-@app.route("/transpostion")
+@app.route("/transposition")
 def transpostion():
     return render_template('/transpostion.html')
 
@@ -45,6 +45,7 @@ def caesar_encrypt():
         <p><strong>Text:</strong> {text}</p>
         <p><strong>Key:</strong> {key}</p>
         <p><strong>Encrypted Text:</strong> {encrypted_text}</p>
+        <button><a href="/caesar" style="color: inherit; text-decoration: none;">Back</a></button>
             """
     return response
 
@@ -60,6 +61,7 @@ def caesar_decrypt():
         <p><strong>Text:</strong> {text}</p>
         <p><strong>Key:</strong> {key}</p>
         <p><strong>Decrypted Text:</strong> {decrypted_text}</p>
+        <button><a href="/caesar" style="color: inherit; text-decoration: none;">Back</a></button>
             """
     return response  
 
@@ -76,6 +78,7 @@ def vigenere_encrypt():
         <p><strong>Text:</strong> {text}</p>
         <p><strong>Key:</strong> {key}</p>
         <p><strong>Decrypted Text:</strong> {encrypted_text}</p>
+        <button><a href="/vigenere" style="color: inherit; text-decoration: none;">Back</a></button>
             """
     return response 
 
@@ -90,6 +93,7 @@ def vigenere_decrypt():
         <p><strong>Text:</strong> {text}</p>
         <p><strong>Key:</strong> {key}</p>
         <p><strong>Decrypted Text:</strong> {decrypted_text}</p>
+        <button><a href="/vigenere" style="color: inherit; text-decoration: none;">Back</a></button>
             """
     return response 
 
@@ -106,6 +110,8 @@ def railfence_encrypt():
         <p><strong>Text:</strong> {text}</p>
         <p><strong>Key:</strong> {key}</p>
         <p><strong>Encrypted Text:</strong> {encrypted_text}</p>
+        <button><a href="/railfence" style="color: inherit; text-decoration: none;">Back</a></button>
+        
             """
     return response
 
@@ -121,6 +127,7 @@ def railfence_decrypt():
         <p><strong>Text:</strong> {text}</p>
         <p><strong>Key:</strong> {key}</p>
         <p><strong>Decrypted Text:</strong> {decrypted_text}</p>
+        <button><a href="/railfence" style="color: inherit; text-decoration: none;">Back</a></button>
             """
     return response  
 
@@ -138,6 +145,7 @@ def transpostion_encrypt():
         <p><strong>Text:</strong> {text}</p>
         <p><strong>Key:</strong> {key}</p>
         <p><strong>Encrypted Text:</strong> {encrypted_text}</p>
+        <button><a href="/transpostion" style="color: inherit; text-decoration: none;">Back</a></button>
             """
     return response
 
@@ -153,6 +161,7 @@ def transpostion_decrypt():
         <p><strong>Text:</strong> {text}</p>
         <p><strong>Key:</strong> {key}</p>
         <p><strong>Decrypted Text:</strong> {decrypted_text}</p>
+        <button><a href="/transpostion" style="color: inherit; text-decoration: none;">Back</a></button>
             """
     return response  
 
@@ -169,6 +178,7 @@ def playfair_creatematrix():
         <h1>ĐÃ TẠO THÀNH CÔNG MA TRẬN!</h1>
         <p><strong>Key:</strong> {key}</p>
         <p><strong>Matrix :</strong> {playfair_matrix}</p>
+        <button><a href="/playfair" style="color: inherit; text-decoration: none;">Back</a></button>
             """
     return response 
 
@@ -184,6 +194,7 @@ def playfair_encrypt():
         <p><strong>Text:</strong> {text}</p>
         <p><strong>Key:</strong> {key}</p>
         <p><strong>Decrypted Text:</strong> {encrypted_text}</p>
+        <button><a href="/playfair" style="color: inherit; text-decoration: none;">Back</a></button>
             """
     return response 
 
@@ -199,6 +210,7 @@ def playfair_decrypt():
         <p><strong>Text:</strong> {text}</p>
         <p><strong>Key:</strong> {key}</p>
         <p><strong>Decrypted Text:</strong> {decrypted_text}</p>
+        <button><a href="/playfair" style="color: inherit; text-decoration: none;">Back</a></button>
             """
     return response 
 
