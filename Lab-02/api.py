@@ -3,13 +3,16 @@ from cipher.caesar import Caesar_Cipher
 from cipher.vigenere import VigenereCipher
 from cipher.playfair import PlayFairCipher
 from cipher.railfence import RailFenceCipher
+from cipher.transpostion import TranspositionCipher
+
 app = Flask(__name__)
 
-#CAESAR CIPHER ALGORITHM
+#CIPHER ALGORITHM
 caesar_cipher = Caesar_Cipher()
 vigenere_cipher = VigenereCipher()
 playfair_cipher = PlayFairCipher()
 railfence_cipher = RailFenceCipher()
+transposition_cipher = TranspositionCipher()
 
 @app.route("/api/caesar/encrypt",methods=["POST"])
 def caesar_encrypt():
@@ -24,8 +27,8 @@ def caesar_decrypt():
     data = request.json
     cipher_text = data['cipher_text']
     key = int(data['key'])
-    encrypt_text = caesar_cipher.encrypt_text(cipher_text,key)
-    return jsonify({'decrypted_message':cipher_text})
+    decrypt_text = caesar_cipher.decrypt_text(cipher_text,key)
+    return jsonify({'decrypted_message':decrypt_text})
 
 
 #VIGENERE CIPHER ALGORITHM
@@ -91,6 +94,24 @@ def decrypt():
     decrypted_text = railfence_cipher.rail_fence_decrypt(cipher_text,key)
     return jsonify({'decrypted_text':decrypted_text})
 
+
+#TRANSPOSTION
+
+@app.route('/api/transpostion/encrypt',methods=['POST'])
+def transpostion_encrypt():
+    data = request.get_json()
+    plain_text =data['plain_text']
+    key = int(data.get('key'))
+    encrypted_text = transposition_cipher.encrypt(plain_text,key)
+    return jsonify({'encrypted_text':encrypted_text})
+
+@app.route('/api/transpostion/decrypt',methods=['POST'])
+def transpostion_decrypt():
+    data = request.get_json() 
+    cipher_text =data['cipher_text']
+    key = int(data.get('key'))
+    decrypted_text = transposition_cipher.decrypt(cipher_text,key)
+    return jsonify({'decrypted_text':decrypted_text})
 
 #main function
 if __name__ == "__main__":

@@ -20,8 +20,8 @@ class Caesar_Cipher:
         text = text.upper()
         decrypt_text=[]
         for letter in text:
-            leeter_index = self.alphabet.index(letter)
-            output_index = (leeter_index + key) % alphabet_len
+            letter_index = self.alphabet.index(letter)
+            output_index = (letter_index - key) % alphabet_len
             output_letter = self.alphabet[output_index]
             decrypt_text.append(output_letter)
         return "".join(decrypt_text)
